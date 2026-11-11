@@ -1,0 +1,44 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>TaskFlow - Notes</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="sidebar">
+    <h2>✦ TaskFlow</h2>
+    <a href="index.html">Home</a>
+    <a href="dashboard.html">Dashboard</a>
+    <a href="tasks.html">My Tasks</a>
+    <a href="calendar.html">Calendar</a>
+    <a href="notes.html">Notes</a>
+    <a href="timer.html">Focus Timer</a>
+    <a href="settings.html">Settings</a>
+</div>
+
+<div class="main">
+    <header>
+        <h2>My Notes</h2>
+        <button onclick="toggleTheme()">Change Theme</button>
+    </header>
+
+    <h1>Write Your Notes</h1>
+
+    <div class="card">
+        <input type="text" id="note-title" placeholder="Note title">
+
+        <textarea id="note-content" placeholder="Write something..."></textarea>
+
+        <button class="btn" onclick="addNote()">Save Note</button>
+    </div>
+
+    <h2>Saved Notes</h2>
+
+    <div id="notes-list" class="notes-grid"></div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

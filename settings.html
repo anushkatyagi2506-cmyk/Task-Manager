@@ -1,0 +1,44 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>TaskFlow - Settings</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="sidebar">
+    <h2>✦ TaskFlow</h2>
+    <a href="index.html">Home</a>
+    <a href="dashboard.html">Dashboard</a>
+    <a href="tasks.html">My Tasks</a>
+    <a href="calendar.html">Calendar</a>
+    <a href="notes.html">Notes</a>
+    <a href="timer.html">Focus Timer</a>
+    <a href="settings.html">Settings</a>
+</div>
+
+<div class="main">
+    <header>
+        <h2>Settings</h2>
+        <button onclick="toggleTheme()">Change Theme</button>
+    </header>
+
+    <h1>App Settings</h1>
+
+    <div class="card">
+        <h2>Appearance</h2>
+        <p>Change the appearance of your application.</p>
+        <button class="btn" onclick="toggleTheme()">Light / Dark Mode</button>
+    </div>
+
+    <div class="card">
+        <h2>Data Management</h2>
+        <p>Delete all saved tasks and notes.</p>
+        <button class="delete-btn" onclick="clearData()">Clear All Data</button>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

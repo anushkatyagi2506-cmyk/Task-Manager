@@ -1,0 +1,68 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>TaskFlow - Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="sidebar">
+    <h2>✦ TaskFlow</h2>
+    <a href="index.html">Home</a>
+    <a href="dashboard.html">Dashboard</a>
+    <a href="tasks.html">My Tasks</a>
+    <a href="calendar.html">Calendar</a>
+    <a href="notes.html">Notes</a>
+    <a href="timer.html">Focus Timer</a>
+    <a href="settings.html">Settings</a>
+</div>
+
+<div class="main">
+    <header>
+        <h2>Dashboard</h2>
+        <button onclick="toggleTheme()">Change Theme</button>
+    </header>
+
+    <h1>Your Productivity Dashboard</h1>
+    <p>Check your task progress here.</p>
+
+    <div class="stats">
+        <div class="card">
+            <h3>Total Tasks</h3>
+            <h1 id="total">0</h1>
+        </div>
+
+        <div class="card">
+            <h3>To Do</h3>
+            <h1 id="todo">0</h1>
+        </div>
+
+        <div class="card">
+            <h3>Doing</h3>
+            <h1 id="doing">0</h1>
+        </div>
+
+        <div class="card">
+            <h3>Done</h3>
+            <h1 id="done">0</h1>
+        </div>
+    </div>
+
+    <div class="card">
+        <h2>Overall Progress</h2>
+        <div class="progress">
+            <div id="progress-bar"></div>
+        </div>
+        <h2 id="progress-text">0%</h2>
+    </div>
+
+    <div class="card">
+        <h2>Task Priority</h2>
+        <p id="priority-info">No tasks added yet.</p>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

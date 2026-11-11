@@ -1,0 +1,81 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>TaskFlow - Tasks</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="sidebar">
+    <h2>✦ TaskFlow</h2>
+    <a href="index.html">Home</a>
+    <a href="dashboard.html">Dashboard</a>
+    <a href="tasks.html">My Tasks</a>
+    <a href="calendar.html">Calendar</a>
+    <a href="notes.html">Notes</a>
+    <a href="timer.html">Focus Timer</a>
+    <a href="settings.html">Settings</a>
+</div>
+
+<div class="main">
+    <header>
+        <h2>My Tasks</h2>
+        <button onclick="toggleTheme()">Change Theme</button>
+    </header>
+
+    <h1>Manage Your Tasks</h1>
+
+    <div class="card">
+        <h3>Add New Task</h3>
+
+        <input type="text" id="task-name" placeholder="Enter task name">
+
+        <textarea id="description" placeholder="Task description"></textarea>
+
+        <label>Priority:</label>
+        <select id="priority">
+            <option>Low</option>
+            <option>Medium</option>
+            <option>High</option>
+        </select>
+
+        <label>Due Date:</label>
+        <input type="date" id="due-date">
+
+        <button class="btn" onclick="addTask()">Add Task</button>
+    </div>
+
+    <div class="filter">
+        <label>Filter:</label>
+        <select id="filter" onchange="displayTasks()">
+            <option value="All">All</option>
+            <option value="High">High</option>
+            <option value="Medium">Medium</option>
+            <option value="Low">Low</option>
+        </select>
+    </div>
+
+    <div class="kanban">
+
+        <div class="column">
+            <h3>To Do</h3>
+            <div id="todo-list" class="task-list" data-status="todo"></div>
+        </div>
+
+        <div class="column">
+            <h3>Doing</h3>
+            <div id="doing-list" class="task-list" data-status="doing"></div>
+        </div>
+
+        <div class="column">
+            <h3>Done</h3>
+            <div id="done-list" class="task-list" data-status="done"></div>
+        </div>
+
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

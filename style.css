@@ -1,0 +1,430 @@
+
+/* BASIC SETTINGS */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f2fa;
+    color: #333;
+    display: flex;
+}
+
+/* SIDEBAR */
+
+.sidebar {
+    width: 220px;
+    height: 100vh;
+    background-color: white;
+    padding: 25px 15px;
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.sidebar h2 {
+    color: #8174d9;
+    margin-bottom: 25px;
+}
+
+.sidebar a {
+    text-decoration: none;
+    color: #555;
+    padding: 13px;
+    border-radius: 8px;
+}
+
+.sidebar a:hover {
+    background-color: #eeeaff;
+    color: #8174d9;
+}
+
+/* MAIN CONTENT */
+
+.main {
+    margin-left: 220px;
+    padding: 30px;
+    width: calc(100% - 220px);
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 35px;
+}
+
+header button {
+    background-color: #8174d9;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 7px;
+    cursor: pointer;
+}
+
+h1 {
+    margin-bottom: 15px;
+}
+
+p {
+    color: #777;
+    margin: 10px 0;
+}
+
+/* HOME PAGE */
+
+.welcome {
+    background: linear-gradient(120deg, #e4dfff, #f5e5ff);
+    padding: 45px;
+    border-radius: 15px;
+    margin-bottom: 30px;
+    line-height: 1.8;
+}
+
+.welcome h1 {
+    color: #443d68;
+}
+
+.btn {
+    background-color: #8174d9;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 7px;
+    cursor: pointer;
+    margin-top: 15px;
+}
+
+.welcome .btn {
+    display: inline-block;
+    text-decoration: none;
+}
+
+/* CARDS */
+
+.card {
+    background-color: white;
+    padding: 22px;
+    border-radius: 12px;
+    margin: 20px 0;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+
+.stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    margin-top: 25px;
+}
+
+.stats .card {
+    margin: 0;
+}
+
+.stats h1 {
+    color: #8174d9;
+    margin-top: 15px;
+}
+
+/* PROGRESS BAR */
+
+.progress {
+    width: 100%;
+    height: 12px;
+    background-color: #eeeaff;
+    border-radius: 20px;
+    margin: 20px 0;
+}
+
+#progress-bar {
+    width: 0%;
+    height: 12px;
+    background-color: #8174d9;
+    border-radius: 20px;
+}
+
+/* INPUTS */
+
+input, textarea, select {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 7px;
+    font-size: 14px;
+}
+
+textarea {
+    resize: vertical;
+}
+
+/* TASK FILTER */
+
+.filter {
+    margin: 20px 0;
+    max-width: 250px;
+}
+
+/* KANBAN BOARD */
+
+.kanban {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin-top: 25px;
+    align-items: start;
+}
+
+.column {
+    background-color: #eae7f5;
+    padding: 15px;
+    border-radius: 10px;
+    min-height: 350px;
+}
+
+.column h3 {
+    margin-bottom: 20px;
+}
+
+.task-list {
+    min-height: 250px;
+}
+
+.task-card {
+    background-color: white;
+    padding: 15px;
+    border-radius: 9px;
+    margin-bottom: 12px;
+    cursor: grab;
+    overflow-wrap: anywhere;
+}
+
+.task-card p {
+    font-size: 13px;
+}
+
+.task-card button {
+    padding: 6px 9px;
+    margin: 5px 5px 0 0;
+    border: none;
+    background-color: #eeeaff;
+    color: #6556bd;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.task-card.dragging {
+    opacity: 0.5;
+}
+
+/* PRIORITY COLORS */
+
+.High {
+    color: #e05265;
+}
+
+.Medium {
+    color: #bd8b2c;
+}
+
+.Low {
+    color: #32966a;
+}
+
+/* CALENDAR */
+
+.calendar-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.calendar-heading button {
+    background-color: #8174d9;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 7px;
+    cursor: pointer;
+}
+
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 7px;
+}
+
+.calendar-day {
+    background-color: #f4f2fa;
+    border: 1px solid #e3e0ef;
+    padding: 15px 5px;
+    text-align: center;
+    border-radius: 7px;
+    cursor: pointer;
+}
+
+.calendar-day:hover,
+.calendar-day.selected {
+    background-color: #ded8ff;
+}
+
+.calendar-day.has-task {
+    border-bottom: 3px solid #8174d9;
+}
+
+.calendar-day.today {
+    color: #8174d9;
+    font-weight: bold;
+}
+
+/* NOTES */
+
+.notes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+}
+
+.note-card {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    overflow-wrap: anywhere;
+}
+
+.note-card p {
+    white-space: pre-wrap;
+}
+
+.note-card button {
+    background-color: #eeeaff;
+    color: #6556bd;
+    border: none;
+    padding: 7px;
+    border-radius: 5px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+/* TIMER */
+
+.timer-box {
+    background-color: white;
+    text-align: center;
+    padding: 50px 20px;
+    border-radius: 15px;
+    margin: 30px auto;
+    max-width: 600px;
+}
+
+#timer {
+    font-size: 75px;
+    color: #8174d9;
+    margin: 30px;
+}
+
+.timer-buttons button {
+    padding: 10px 15px;
+    background-color: #eeeaff;
+    border: none;
+    border-radius: 7px;
+    margin: 5px;
+    cursor: pointer;
+}
+
+/* DELETE BUTTON */
+
+.delete-btn {
+    background-color: #e66c79;
+    color: white;
+    border: none;
+    padding: 12px 18px;
+    border-radius: 7px;
+    cursor: pointer;
+}
+
+/* DARK MODE */
+
+body.dark {
+    background-color: #1e1e2d;
+    color: white;
+}
+
+body.dark .sidebar,
+body.dark .card,
+body.dark .task-card,
+body.dark .note-card,
+body.dark .timer-box {
+    background-color: #303044;
+    color: white;
+}
+
+body.dark .sidebar a {
+    color: white;
+}
+
+body.dark .sidebar a:hover {
+    background-color: #45415e;
+}
+
+body.dark input,
+body.dark textarea,
+body.dark select {
+    background-color: #303044;
+    color: white;
+    border-color: #555;
+}
+
+body.dark .column,
+body.dark .calendar-day {
+    background-color: #35354a;
+    color: white;
+}
+
+/* MOBILE SCREEN */
+
+@media(max-width: 800px) {
+
+    body {
+        display: block;
+    }
+
+    .sidebar {
+        position: relative;
+        width: 100%;
+        height: auto;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .sidebar h2 {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .sidebar a {
+        padding: 8px;
+        font-size: 13px;
+    }
+
+    .main {
+        margin-left: 0;
+        width: 100%;
+        padding: 20px;
+    }
+
+    .stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .kanban {
+        grid-template-columns: 1fr;
+    }
+}

@@ -1,0 +1,48 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>TaskFlow - Focus Timer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="sidebar">
+    <h2>✦ TaskFlow</h2>
+    <a href="index.html">Home</a>
+    <a href="dashboard.html">Dashboard</a>
+    <a href="tasks.html">My Tasks</a>
+    <a href="calendar.html">Calendar</a>
+    <a href="notes.html">Notes</a>
+    <a href="timer.html">Focus Timer</a>
+    <a href="settings.html">Settings</a>
+</div>
+
+<div class="main">
+    <header>
+        <h2>Focus Timer</h2>
+        <button onclick="toggleTheme()">Change Theme</button>
+    </header>
+
+    <div class="timer-box">
+        <h1>Pomodoro Timer</h1>
+        <p>Focus on one task at a time.</p>
+
+        <div class="timer-buttons">
+            <button onclick="setTimer(25)">Focus</button>
+            <button onclick="setTimer(5)">Short Break</button>
+            <button onclick="setTimer(15)">Long Break</button>
+        </div>
+
+        <h1 id="timer">25:00</h1>
+
+        <button class="btn" onclick="startTimer()">Start / Pause</button>
+        <button class="btn" onclick="resetTimer()">Reset</button>
+
+        <p id="timer-message">Ready to focus?</p>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
